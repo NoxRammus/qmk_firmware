@@ -61,13 +61,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //LOWER
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB, XXXXXXX,   KC_UP, XXXXXXX, XXXXXXX, KC_MPRV,                      XXXXXXX, KC_MINS,   KC_P7,   KC_P8,   KC_P9,  KC_DEL,
+       KC_TAB, XXXXXXX,   KC_UP, XXXXXXX, XXXXXXX, KC_MPRV,                      XXXXXXX, KC_MINS,   KC_7,   KC_8,   KC_9,  KC_DEL,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, KC_LEFT, KC_DOWN,KC_RIGHT, XXXXXXX, KC_MPLY,                      XXXXXXX, KC_PLUS,   KC_P4,   KC_P5,   KC_P6, XXXXXXX,
+      KC_LSFT, KC_LEFT, KC_DOWN,KC_RIGHT, XXXXXXX, KC_MPLY,                      XXXXXXX, KC_PLUS,   KC_4,   KC_5,   KC_6, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MNXT,                      XXXXXXX,  KC_EQL,   KC_P1,   KC_P2,   KC_P3,  KC_F13,
+      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MNXT,                      XXXXXXX,  KC_EQL,   KC_1,   KC_2,   KC_3,  KC_F13,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, _______,  KC_SPC,    KC_SPC,   MO(5), KC_P0
+                                          KC_LGUI, _______,  KC_SPC,    KC_SPC,   MO(5), KC_0
                                       //`--------------------------'  `--------------------------'
   ),
  //RAISE
@@ -85,11 +85,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //ADJUST
   [5] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_BOOT,   TG(1), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
+      XXXXXXX,   TG(1), XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,                        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
+      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_MOD, XXXXXXX,                        KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD, RGB_RMOD, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI, _______, _______,    _______, _______, KC_LALT
                                       //`--------------------------'  `--------------------------'
@@ -103,14 +103,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* 32 * 32 logo */
 static void render_logo(void) {
     static const char PROGMEM hexagram_logo[] = {
-	0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xc0, 0x70, 0x18, 0x06, 
-    0x06, 0x18, 0x70, 0xc0, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 
-    0x00, 0x00, 0x01, 0x07, 0x1f, 0x32, 0x66, 0xc4, 0x6c, 0x38, 0x1e, 0x37, 0x61, 0xc0, 0x80, 0x80, 
-    0x80, 0x80, 0xc0, 0x61, 0x37, 0x1e, 0x38, 0x6c, 0xc4, 0x66, 0x32, 0x1f, 0x07, 0x01, 0x00, 0x00, 
-    0x00, 0x00, 0x80, 0xe0, 0xf8, 0x4c, 0x66, 0x23, 0x36, 0x1c, 0x78, 0xec, 0x86, 0x03, 0x01, 0x01, 
-    0x01, 0x01, 0x03, 0x86, 0xec, 0x78, 0x1c, 0x36, 0x23, 0x66, 0x4c, 0xf8, 0xe0, 0x80, 0x00, 0x00, 
-    0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x03, 0x0e, 0x18, 0x60, 
-    0x60, 0x18, 0x0e, 0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00
+	0xff, 0xff, 0xff, 0xff, 0xff, 0xe0, 0x07, 0xff, 0xff, 0xe0, 0x07, 0xff, 0xff, 0xa0, 0x05, 0xff, 
+    0xfe, 0x27, 0xe4, 0x7f, 0xfc, 0x2f, 0xf4, 0x3f, 0xf8, 0x00, 0x00, 0x1f, 0xf0, 0x00, 0x00, 0x0f, 
+    0xf0, 0x00, 0x00, 0x0f, 0xf0, 0x00, 0x00, 0x0f, 0xf0, 0x00, 0x00, 0x0f, 0xf0, 0x00, 0x00, 0x0f, 
+    0xf0, 0x00, 0x00, 0x0f, 0xf7, 0x80, 0x01, 0xef, 0xe7, 0xf0, 0x0f, 0xe7, 0x85, 0xfe, 0x7f, 0xa1, 
+    0x84, 0x7c, 0x3e, 0x20, 0x04, 0x00, 0x00, 0x00, 0x04, 0x01, 0x80, 0x00, 0x04, 0x03, 0xc0, 0x00, 
+    0x04, 0x07, 0xe0, 0x00, 0x04, 0x07, 0xe0, 0x00, 0x04, 0x0f, 0xf0, 0x00, 0x04, 0x0f, 0xf0, 0x20, 
+    0xd4, 0x0f, 0xf0, 0x2a, 0x84, 0x1f, 0xf8, 0x31, 0x80, 0x1f, 0xf8, 0x01, 0x80, 0x1f, 0xf8, 0x01, 
+    0xc2, 0x18, 0x18, 0x43, 0xf2, 0x00, 0x00, 0x4f, 0xff, 0x80, 0x01, 0xff, 0xff, 0xff, 0xff, 0xff
 };
     oled_write_raw_P(hexagram_logo, sizeof(hexagram_logo));
 }
